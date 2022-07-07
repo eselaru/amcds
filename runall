@@ -1,0 +1,12 @@
+#!/bin/bash
+
+[ $# -ne 1 ] && {
+	>&2 echo "Usage: $0 <owner>"
+	exit 1
+}
+
+owner=$1
+
+dotnet run $owner 1 &
+dotnet run $owner 2 &
+dotnet run $owner 3 &
